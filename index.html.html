@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kayron & Jyovânia ❤️</title>
+
+    <style>
+        * ```css
+/*
+============================================
+NOSSAS MÚSICAS
+============================================
+*/
+
+.secao-musicas {
+    width: 100%;
+
+    /*
+    Esse espaço separa bastante o contador
+    da área de músicas.
+    */
+    margin-top: 70px;
+
+    padding-top: 45px;
+
+    border-top:
+        1px solid
+        rgba(255, 150, 185, 0.12);
+}
+
+
+/*
+============================================
+TÍTULO
+============================================
+*/
+
+.titulo-musicas {
+    margin-bottom: 32px;
+}
+
+.icone-musica {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin:
+        0 auto 14px;
+
+    border-radius:
+        50%;
+
+    font-size:
+        25px;
+
+    color:
+        #ffbfd2;
+
+    background:
+        rgba(255, 80, 135, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 150, 185, 0.18);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 40, 110, 0.10);
+}
+
+.titulo-musicas h2 {
+    font-size:
+        clamp(25px, 4vw, 34px);
+
+    color:
+        #ffd2df;
+
+    margin-bottom:
+        8px;
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 70, 130, 0.18);
+}
+
+.titulo-musicas p {
+    font-size:
+        14px;
+
+    color:
+        rgba(255, 225, 235, 0.70);
+}
+
+
+/*
+============================================
+LISTA
+============================================
+*/
+
+.lista-musicas {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        18px;
+
+    width:
+        100%;
+}
+
+
+/*
+============================================
+CARD
+============================================
+*/
+
+.card-musica {
+    position:
+        relative;
+
+    padding:
+        22px;
+
+    border-radius:
+        22px;
+
+    text-align:
+        left;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 105, 150, 0.09),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255, 160, 195, 0.13);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card-musica:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(255, 150, 185, 0.26);
+
+    box-shadow:
+        0 16px 40px
+        rgba(0, 0, 0, 0.28),
+        0 0 25px
+        rgba(255, 40, 110, 0.07);
+}
+
+
+/*
+A terceira música ocupa a largura inteira.
+*/
+
+.musica-extra {
+    grid-column:
+        1 / -1;
+}
+
+
+/*
+============================================
+ETIQUETA
+============================================
+*/
+
+.tipo-musica {
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #ffc7d8;
+
+    background:
+        rgba(255, 90, 145, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 145, 180, 0.14);
+}
+
+.tipo-musica.especial {
+    color:
+        #ffd7e3;
+
+    background:
+        rgba(255, 55, 120, 0.16);
+}
+
+
+/*
+============================================
+NOME DA MÚSICA
+============================================
+*/
+
+.card-musica h3 {
+    font-size:
+        22px;
+
+    color:
+        #fff2f6;
+
+    margin-bottom:
+        4px;
+}
+
+.artista {
+    font-size:
+        14px;
+
+    color:
+        rgba(255, 220, 230, 0.65);
+
+    margin-bottom:
+        18px;
+}
+
+
+/*
+============================================
+SPOTIFY
+============================================
+*/
+
+.spotify-player {
+    width:
+        100%;
+
+    border-radius:
+        16px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.25);
+}
+
+.spotify-player iframe {
+    display:
+        block;
+
+    width:
+        100%;
+}
+
+
+/*
+============================================
+CELULAR
+============================================
+*/
+
+@media (max-width: 600px) {
+
+    .secao-musicas {
+        margin-top:
+            55px;
+
+        padding-top:
+            38px;
+    }
+
+    .lista-musicas {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+    }
+
+    .musica-extra {
+        grid-column:
+            auto;
+    }
+
+    .card-musica {
+        padding:
+            16px;
+
+        border-radius:
+            18px;
+    }
+
+    .card-musica h3 {
+        font-size:
+            20px;
+    }
+
+    .titulo-musicas {
+        margin-bottom:
+            25px;
+    }
+
+    .titulo-musicas p {
+        font-size:
+            13px;
+
+        padding:
+            0 10px;
+    }
+
+}
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 16px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: white;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(255, 70, 130, 0.28),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(255, 20, 100, 0.20),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #120008,
+                    #25000f 45%,
+                    #090003 100%
+                );
+
+            overflow-x: hidden;
+
+            position: relative;
+        }
+
+        /*
+        ============================================
+        FUNDO COM CORAÇÕES
+        ============================================
+        */
+
+        .coracoes {
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+        .coracao {
+            position: absolute;
+
+            bottom: -60px;
+
+            color: rgba(255, 130, 170, 0.55);
+
+            font-size: 22px;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(255, 80, 140, 0.35)
+                );
+
+            animation:
+                subirCoracao linear infinite;
+
+            user-select: none;
+        }
+
+        @keyframes subirCoracao {
+
+            0% {
+                transform:
+                    translateY(0)
+                    translateX(0)
+                    rotate(0deg)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.65;
+            }
+
+            50% {
+                transform:
+                    translateY(-50vh)
+                    translateX(18px)
+                    rotate(10deg)
+                    scale(1);
+            }
+
+            90% {
+                opacity: 0.45;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh)
+                    translateX(-18px)
+                    rotate(-10deg)
+                    scale(1.15);
+
+                opacity: 0;
+            }
+        }
+
+
+        /*
+        ============================================
+        CONTEÚDO
+        ============================================
+        */
+
+        .container {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            padding: 40px 24px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.075),
+                    rgba(255, 255, 255, 0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255, 150, 185, 0.14);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, 0.38),
+                0 0 45px
+                rgba(255, 30, 100, 0.08);
+        }
+
+        h1 {
+            font-size:
+                clamp(30px, 6vw, 48px);
+
+            margin-bottom: 10px;
+
+            color: #ffd2df;
+
+            line-height: 1.2;
+
+            text-shadow:
+                0 0 10px
+                rgba(255, 70, 130, 0.35),
+                0 0 25px
+                rgba(255, 30, 100, 0.18);
+        }
+
+        .subtitulo {
+            font-size:
+                clamp(17px, 3vw, 22px);
+
+            margin-bottom: 32px;
+
+            color: #f7dce5;
+        }
+
+
+        /*
+        ============================================
+        CONTADOR
+        ============================================
+        */
+
+        .contador {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 15px;
+        }
+
+        .caixa {
+            position: relative;
+
+            width: 100%;
+
+            min-width: 0;
+
+            padding: 26px 10px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 105, 150, 0.12),
+                    rgba(255, 255, 255, 0.04)
+                );
+
+            border:
+                1px solid
+                rgba(255, 170, 200, 0.15);
+
+            box-shadow:
+                0 10px 28px
+                rgba(0, 0, 0, 0.20),
+                inset 0 0 20px
+                rgba(255, 255, 255, 0.025);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .caixa::before {
+            content: "";
+
+            position: absolute;
+
+            top: -40%;
+            left: -40%;
+
+            width: 80%;
+            height: 180%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.08),
+                    transparent
+                );
+
+            transform: rotate(25deg);
+
+            animation:
+                brilho 6s ease-in-out infinite;
+        }
+
+        @keyframes brilho {
+
+            0%,
+            100% {
+                transform:
+                    translateX(-120%)
+                    rotate(25deg);
+            }
+
+            50% {
+                transform:
+                    translateX(260%)
+                    rotate(25deg);
+            }
+        }
+
+        .caixa:hover {
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(255, 140, 180, 0.3);
+
+            box-shadow:
+                0 16px 38px
+                rgba(0, 0, 0, 0.26),
+                0 0 24px
+                rgba(255, 40, 110, 0.10);
+        }
+
+        .numero {
+            position: relative;
+
+            z-index: 1;
+
+            display: block;
+
+            font-size:
+                clamp(31px, 5vw, 46px);
+
+            font-weight: bold;
+
+            color: #ffbad0;
+
+            text-shadow:
+                0 0 10px
+                rgba(255, 80, 140, 0.25);
+        }
+
+        .texto {
+            position: relative;
+
+            z-index: 1;
+
+            margin-top: 8px;
+
+            font-size:
+                clamp(13px, 2vw, 16px);
+
+            color: #ffffff;
+        }
+
+
+        /*
+        ============================================
+        BOTÕES DO CONTADOR
+        ============================================
+        */
+
+        .botoes-contador {
+            margin-top: 24px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        .botao-tempo {
+            border: 1px solid rgba(255, 155, 190, 0.22);
+
+            outline: none;
+
+            padding: 11px 18px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            color: #ffd9e4;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 105, 150, 0.13),
+                    rgba(255, 255, 255, 0.04)
+                );
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 0, 0, 0.20);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .botao-tempo:hover {
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(255, 145, 180, 0.45);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 105, 150, 0.22),
+                    rgba(255, 255, 255, 0.06)
+                );
+
+            box-shadow:
+                0 8px 22px
+                rgba(255, 40, 110, 0.12);
+        }
+
+        .botao-tempo.ativo {
+            color: white;
+
+            border-color:
+                rgba(255, 150, 185, 0.55);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 75, 130, 0.40),
+                    rgba(180, 20, 70, 0.25)
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(255, 50, 115, 0.18);
+        }
+
+
+        .desde {
+            margin-top: 25px;
+
+            font-size:
+                clamp(14px, 2.5vw, 17px);
+
+            color: #f5cbd8;
+
+            line-height: 1.5;
+        }
+
+
+        /*
+        ============================================
+        TABLET
+        ============================================
+        */
+
+        @media (max-width: 768px) {
+
+            body {
+                align-items: flex-start;
+
+                padding-top: 45px;
+            }
+
+            .container {
+                max-width: 600px;
+
+                padding: 30px 16px;
+            }
+
+            .contador {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .caixa {
+                padding:
+                    24px 10px;
+            }
+
+        }
+
+
+        /*
+        ============================================
+        CELULAR
+        ============================================
+        */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding:
+                    28px 12px
+                    22px;
+            }
+
+            .container {
+                padding:
+                    28px 12px;
+
+                border-radius:
+                    22px;
+            }
+
+            h1 {
+                font-size:
+                    30px;
+
+                padding:
+                    0 5px;
+            }
+
+            .subtitulo {
+                font-size:
+                    17px;
+
+                margin-top:
+                    5px;
+
+                margin-bottom:
+                    25px;
+            }
+
+            .contador {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap:
+                    10px;
+            }
+
+            .caixa {
+                padding:
+                    21px 6px;
+
+                border-radius:
+                    16px;
+            }
+
+            .numero {
+                font-size:
+                    34px;
+            }
+
+            .texto {
+                font-size:
+                    13px;
+            }
+
+            .botoes-contador {
+                gap: 8px;
+
+                margin-top: 20px;
+            }
+
+            .botao-tempo {
+                padding:
+                    10px 13px;
+
+                font-size:
+                    12px;
+            }
+
+            .desde {
+                margin-top:
+                    22px;
+
+                padding:
+                    0 10px;
+
+                font-size:
+                    14px;
+            }
+
+            .coracao {
+                font-size:
+                    18px;
+            }
+
+        }
+
+
+        /*
+        ============================================
+        CELULARES MUITO PEQUENOS
+        ============================================
+        */
+
+        @media (max-width: 340px) {
+
+            .contador {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .caixa {
+                max-width:
+                    220px;
+
+                margin:
+                    0 auto;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div
+        class="coracoes"
+        id="coracoes"
+    ></div>
+
+
+    <main class="container">
+
+        <h1>
+            Kayron & Jyovânia ❤️
+        </h1>
+
+        <p class="subtitulo">
+            Nosso tempo juntos
+        </p>
+
+
+        <section class="contador">
+
+            <div class="caixa">
+
+                <span
+                    class="numero"
+                    id="valor1"
+                >
+                    0
+                </span>
+
+                <p
+                    class="texto"
+                    id="texto1"
+                >
+                    Dias
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <span
+                    class="numero"
+                    id="valor2"
+                >
+                    00
+                </span>
+
+                <p
+                    class="texto"
+                    id="texto2"
+                >
+                    Horas
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <span
+                    class="numero"
+                    id="valor3"
+                >
+                    00
+                </span>
+
+                <p
+                    class="texto"
+                    id="texto3"
+                >
+                    Minutos
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <span
+                    class="numero"
+                    id="valor4"
+                >
+                    00
+                </span>
+
+                <p
+                    class="texto"
+                    id="texto4"
+                >
+                    Segundos
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="botoes-contador">
+
+            <button
+                class="botao-tempo ativo"
+                id="botaoNormal"
+                type="button"
+            >
+                Dias
+            </button>
+
+            <button
+                class="botao-tempo"
+                id="botaoSemanas"
+                type="button"
+            >
+                Semanas
+            </button>
+
+            <button
+                class="botao-tempo"
+                id="botaoMeses"
+                type="button"
+            >
+                Meses
+            </button>
+
+        </div>
+
+
+        <p class="desde">
+            Desde 06 de setembro de 2026 ❤️
+        </p>
+<!-- ============================================
+     NOSSAS MÚSICAS
+============================================= -->
+
+<section class="secao-musicas">
+
+    <div class="titulo-musicas">
+
+        <span class="icone-musica">
+            ♪
+        </span>
+
+        <h2>
+            MÚSICAS❤️
+        </h2>
+
+        <p>
+          
+        </p>
+
+    </div>
+
+
+    <div class="lista-musicas">
+
+
+        <!-- MINHA MÚSICA -->
+
+        <article class="card-musica">
+
+            <div class="tipo-musica">
+                Minha preferida
+            </div>
+
+            <h3>
+                Pras Damas
+            </h3>
+
+            <p class="artista">
+                Oriente
+            </p>
+
+            <div class="spotify-player">
+
+                <iframe
+                    style="border-radius: 16px;"
+                    src="https://open.spotify.com/embed/track/274REus0NhGTKYA09jvvbW?utm_source=generator"
+                    width="100%"
+                    height="152"
+                    frameborder="0"
+                    allowfullscreen=""
+                    allow="
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        fullscreen;
+                        picture-in-picture
+                    "
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MÚSICA DELA -->
+
+        <article class="card-musica">
+
+            <div class="tipo-musica">
+                Preferida dela
+            </div>
+
+            <h3>
+                Heather
+            </h3>
+
+            <p class="artista">
+                Conan Gray
+            </p>
+
+            <div class="spotify-player">
+
+                <iframe
+                    style="border-radius: 16px;"
+                    src="https://open.spotify.com/embed/track/4xqrdfXkTW4T0RauPLv3WA?utm_source=generator"
+                    width="100%"
+                    height="152"
+                    frameborder="0"
+                    allowfullscreen=""
+                    allow="
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        fullscreen;
+                        picture-in-picture
+                    "
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MÚSICA EXTRA -->
+
+        <article class="card-musica musica-extra">
+
+            <div class="tipo-musica especial">
+                ❤️
+            </div>
+
+            <h3>
+                Aliança
+            </h3>
+
+            <p class="artista">
+                Tribalistas
+            </p>
+
+            <div class="spotify-player">
+
+                <iframe
+                    style="border-radius: 16px;"
+                    src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu?utm_source=generator"
+                    width="100%"
+                    height="152"
+                    frameborder="0"
+                    allowfullscreen=""
+                    allow="
+                        autoplay;
+                        clipboard-write;
+                        encrypted-media;
+                        fullscreen;
+                        picture-in-picture
+                    "
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                /*
+                ========================================
+                ELEMENTOS DO CONTADOR
+                ========================================
+                */
+
+                const valor1 =
+                    document.getElementById("valor1");
+
+                const valor2 =
+                    document.getElementById("valor2");
+
+                const valor3 =
+                    document.getElementById("valor3");
+
+                const valor4 =
+                    document.getElementById("valor4");
+
+
+                const texto1 =
+                    document.getElementById("texto1");
+
+                const texto2 =
+                    document.getElementById("texto2");
+
+                const texto3 =
+                    document.getElementById("texto3");
+
+                const texto4 =
+                    document.getElementById("texto4");
+
+
+                /*
+                ========================================
+                BOTÕES
+                ========================================
+                */
+
+                const botaoNormal =
+                    document.getElementById(
+                        "botaoNormal"
+                    );
+
+                const botaoSemanas =
+                    document.getElementById(
+                        "botaoSemanas"
+                    );
+
+                const botaoMeses =
+                    document.getElementById(
+                        "botaoMeses"
+                    );
+
+
+                /*
+                ========================================
+                DATA INICIAL
+                ========================================
+                */
+
+                const dataInicial =
+                    new Date(
+                        2026,
+                        8,
+                        6,
+                        0,
+                        0,
+                        0
+                    );
+
+
+                /*
+                ========================================
+                MODO ATUAL
+                ========================================
+                */
+
+                let modoAtual =
+                    "dias";
+
+
+                /*
+                ========================================
+                ALTERAR BOTÃO ATIVO
+                ========================================
+                */
+
+                function atualizarBotaoAtivo() {
+
+                    botaoNormal
+                        .classList
+                        .remove("ativo");
+
+                    botaoSemanas
+                        .classList
+                        .remove("ativo");
+
+                    botaoMeses
+                        .classList
+                        .remove("ativo");
+
+
+                    if (modoAtual === "dias") {
+
+                        botaoNormal
+                            .classList
+                            .add("ativo");
+
+                    }
+
+
+                    if (modoAtual === "semanas") {
+
+                        botaoSemanas
+                            .classList
+                            .add("ativo");
+
+                    }
+
+
+                    if (modoAtual === "meses") {
+
+                        botaoMeses
+                            .classList
+                            .add("ativo");
+
+                    }
+
+                }
+
+
+                /*
+                ========================================
+                CALCULAR TEMPO
+                ========================================
+                */
+
+                function obterTempo() {
+
+                    const agora =
+                        new Date();
+
+
+                    const diferenca =
+                        agora.getTime()
+                        -
+                        dataInicial.getTime();
+
+
+                    if (diferenca < 0) {
+
+                        return {
+                            dias: 0,
+                            horas: 0,
+                            minutos: 0,
+                            segundos: 0
+                        };
+
+                    }
+
+
+                    const totalSegundos =
+                        Math.floor(
+                            diferenca / 1000
+                        );
+
+
+                    const dias =
+                        Math.floor(
+                            totalSegundos
+                            / 86400
+                        );
+
+
+                    const horas =
+                        Math.floor(
+                            (
+                                totalSegundos
+                                % 86400
+                            )
+                            / 3600
+                        );
+
+
+                    const minutos =
+                        Math.floor(
+                            (
+                                totalSegundos
+                                % 3600
+                            )
+                            / 60
+                        );
+
+
+                    const segundos =
+                        totalSegundos
+                        % 60;
+
+
+                    return {
+                        dias,
+                        horas,
+                        minutos,
+                        segundos
+                    };
+
+                }
+
+
+                /*
+                ========================================
+                ATUALIZAR CONTADOR
+                ========================================
+                */
+
+                function atualizarContador() {
+
+                    const tempo =
+                        obterTempo();
+
+
+                    /*
+                    ------------------------------------
+                    MODO NORMAL
+                    ------------------------------------
+                    */
+
+                    if (modoAtual === "dias") {
+
+                        valor1.textContent =
+                            tempo.dias;
+
+                        texto1.textContent =
+                            tempo.dias === 1
+                                ? "Dia"
+                                : "Dias";
+
+
+                        valor2.textContent =
+                            String(
+                                tempo.horas
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto2.textContent =
+                            tempo.horas === 1
+                                ? "Hora"
+                                : "Horas";
+
+
+                        valor3.textContent =
+                            String(
+                                tempo.minutos
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto3.textContent =
+                            tempo.minutos === 1
+                                ? "Minuto"
+                                : "Minutos";
+
+
+                        valor4.textContent =
+                            String(
+                                tempo.segundos
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto4.textContent =
+                            tempo.segundos === 1
+                                ? "Segundo"
+                                : "Segundos";
+
+                    }
+
+
+                    /*
+                    ------------------------------------
+                    MODO SEMANAS
+                    ------------------------------------
+                    */
+
+                    if (modoAtual === "semanas") {
+
+                        const semanas =
+                            Math.floor(
+                                tempo.dias / 7
+                            );
+
+
+                        const diasRestantes =
+                            tempo.dias % 7;
+
+
+                        valor1.textContent =
+                            semanas;
+
+                        texto1.textContent =
+                            semanas === 1
+                                ? "Semana"
+                                : "Semanas";
+
+
+                        valor2.textContent =
+                            diasRestantes;
+
+                        texto2.textContent =
+                            diasRestantes === 1
+                                ? "Dia"
+                                : "Dias";
+
+
+                        valor3.textContent =
+                            String(
+                                tempo.horas
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto3.textContent =
+                            tempo.horas === 1
+                                ? "Hora"
+                                : "Horas";
+
+
+                        valor4.textContent =
+                            String(
+                                tempo.minutos
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto4.textContent =
+                            tempo.minutos === 1
+                                ? "Minuto"
+                                : "Minutos";
+
+                    }
+
+
+                    /*
+                    ------------------------------------
+                    MODO MESES
+                    1 MÊS = 30 DIAS
+                    ------------------------------------
+                    */
+
+                    if (modoAtual === "meses") {
+
+                        const meses =
+                            Math.floor(
+                                tempo.dias / 30
+                            );
+
+
+                        const diasRestantes =
+                            tempo.dias % 30;
+
+
+                        valor1.textContent =
+                            meses;
+
+                        texto1.textContent =
+                            meses === 1
+                                ? "Mês"
+                                : "Meses";
+
+
+                        valor2.textContent =
+                            diasRestantes;
+
+                        texto2.textContent =
+                            diasRestantes === 1
+                                ? "Dia"
+                                : "Dias";
+
+
+                        valor3.textContent =
+                            String(
+                                tempo.horas
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto3.textContent =
+                            tempo.horas === 1
+                                ? "Hora"
+                                : "Horas";
+
+
+                        valor4.textContent =
+                            String(
+                                tempo.minutos
+                            )
+                            .padStart(
+                                2,
+                                "0"
+                            );
+
+                        texto4.textContent =
+                            tempo.minutos === 1
+                                ? "Minuto"
+                                : "Minutos";
+
+                    }
+
+                }
+
+
+                /*
+                ========================================
+                CLIQUE EM DIAS
+                ========================================
+                */
+
+                botaoNormal.addEventListener(
+                    "click",
+                    function () {
+
+                        modoAtual =
+                            "dias";
+
+                        atualizarBotaoAtivo();
+
+                        atualizarContador();
+
+                    }
+                );
+
+
+                /*
+                ========================================
+                CLIQUE EM SEMANAS
+                ========================================
+                */
+
+                botaoSemanas.addEventListener(
+                    "click",
+                    function () {
+
+                        modoAtual =
+                            "semanas";
+
+                        atualizarBotaoAtivo();
+
+                        atualizarContador();
+
+                    }
+                );
+
+
+                /*
+                ========================================
+                CLIQUE EM MESES
+                ========================================
+                */
+
+                botaoMeses.addEventListener(
+                    "click",
+                    function () {
+
+                        const tempo =
+                            obterTempo();
+
+
+                        /*
+                        Só funciona quando completar
+                        pelo menos 30 dias.
+                        */
+
+                        if (tempo.dias < 30) {
+
+                            return;
+
+                        }
+
+
+                        modoAtual =
+                            "meses";
+
+                        atualizarBotaoAtivo();
+
+                        atualizarContador();
+
+                    }
+                );
+
+
+                /*
+                ========================================
+                INICIAR CONTADOR
+                ========================================
+                */
+
+                atualizarContador();
+
+
+                setInterval(
+                    atualizarContador,
+                    1000
+                );
+
+
+                /*
+                ========================================
+                CORAÇÕES ANIMADOS
+                ========================================
+                */
+
+                const areaCoracoes =
+                    document.getElementById(
+                        "coracoes"
+                    );
+
+
+                const quantidadeCoracoes =
+                    window.innerWidth <= 480
+                    ? 18
+                    : 30;
+
+
+                for (
+                    let i = 0;
+                    i < quantidadeCoracoes;
+                    i++
+                ) {
+
+                    const coracao =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    coracao.classList.add(
+                        "coracao"
+                    );
+
+
+                    coracao.innerHTML =
+                        "♥";
+
+
+                    coracao.style.left =
+                        Math.random()
+                        * 100
+                        + "%";
+
+
+                    coracao.style.fontSize =
+                        (
+                            Math.random()
+                            * 18
+                            + 12
+                        )
+                        + "px";
+
+
+                    coracao.style.animationDuration =
+                        (
+                            Math.random()
+                            * 10
+                            + 12
+                        )
+                        + "s";
+
+
+                    coracao.style.animationDelay =
+                        (
+                            Math.random()
+                            * -18
+                        )
+                        + "s";
+
+
+                    coracao.style.opacity =
+                        Math.random()
+                        * 0.45
+                        + 0.2;
+
+
+                    areaCoracoes.appendChild(
+                        coracao
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
+```
