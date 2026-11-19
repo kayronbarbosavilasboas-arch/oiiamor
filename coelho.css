@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #e987ad;
+  --pink-dark: #c95f8c;
+  --pink-soft: #ffe5ef;
+  --ink: #5c4050;
+  --muted: #9c8190;
+  --cream: #fffafc;
+  --line: #f4dce7;
+  font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--ink);
+  background: radial-gradient(circle at 12% 8%, #ffeaf2 0, transparent 30%),
+              radial-gradient(circle at 90% 30%, #fff0df 0, transparent 28%), #fff9fc;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.pet-app { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0 28px; }
+.topbar { display:flex; align-items:center; justify-content:space-between; }
+.back-link { text-decoration:none; color:var(--muted); font-weight:800; font-size:14px; }
+.brand { font-weight:900; letter-spacing:2px; font-size:12px; color:#a66e88; }
+.brand span { color:var(--pink); font-size:17px; margin-right:5px; }
+.sound-toggle { border:1px solid var(--line); background:white; color:var(--pink-dark); width:38px; height:38px; border-radius:50%; font-size:19px; }
+.intro { text-align:center; padding:34px 0 25px; }
+.eyebrow { color:var(--pink-dark); letter-spacing:2px; font-size:10px; font-weight:900; margin:0 0 7px; }
+h1 { font-size:clamp(30px, 5vw, 45px); line-height:1.1; margin:0; font-weight:900; }
+h1 span { color:var(--pink-dark); }
+.subtitle { color:var(--muted); margin:10px 0 0; font-size:14px; }
+.game-layout { display:grid; grid-template-columns:1.08fr .92fr; gap:18px; align-items:stretch; }
+.pet-card, .care-panel, .extras { background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:24px; box-shadow:0 12px 35px rgba(173,105,137,.08); }
+.pet-card { padding:20px; }
+.pet-card-top { display:flex; justify-content:space-between; align-items:flex-start; }
+.level-label { display:inline-block; padding:5px 9px; background:#fff0f6; color:var(--pink-dark); border-radius:20px; font-size:10px; font-weight:900; letter-spacing:1px; }
+.pet-card-top h2 { margin:7px 0 0; font-size:24px; }
+.coin-pill { background:#fff5d9; color:#a77a25; border-radius:20px; padding:8px 13px; font-weight:900; font-size:14px; }
+.scene { height:310px; margin-top:13px; border-radius:19px; position:relative; overflow:hidden; background:linear-gradient(#fff1f6 0 67%,#f7e7d9 67%); }
+.sun { position:absolute; width:40px; height:40px; border-radius:50%; background:#ffe3a4; top:25px; right:35px; box-shadow:0 0 0 9px #ffe3a433; }
+.cloud { position:absolute; width:60px; height:16px; border-radius:20px; background:#fff; opacity:.8; }
+.cloud:before,.cloud:after { content:""; position:absolute; background:inherit; border-radius:50%; }
+.cloud:before { width:23px;height:23px;left:10px;top:-10px; }
+.cloud:after { width:18px;height:18px;right:10px;top:-7px; }
+.cloud-one { top:65px;left:40px; }.cloud-two { top:115px;right:65px;transform:scale(.7); }
+.ground { position:absolute; height:34px; bottom:0; left:0; right:0; background:#e6d5c6; border-top:4px solid #d9c2b2; }
+.sparkle { position:absolute; color:#e9a5c0; font-size:22px; }.sparkle-one{top:145px;left:18%;}.sparkle-two{top:185px;right:17%;}
+.pet-wrap { position:absolute; z-index:2; bottom:24px; left:50%; transform:translateX(-50%); width:190px; height:230px; display:flex; align-items:flex-end; justify-content:center; }
+.pet { position:relative; width:150px; height:205px; image-rendering:pixelated; animation:bob 2.2s ease-in-out infinite; }
+.ear { position:absolute; z-index:1; bottom:119px; width:38px; height:92px; background:#fff; border:5px solid #e8d5dc; border-radius:48% 48% 35% 35%; box-shadow:inset 0 -12px #f6c7d7; }
+.ear-left { left:31px; transform:rotate(-13deg); }.ear-right { right:29px; transform:rotate(12deg); }
+.body { position:absolute; z-index:1; bottom:8px; left:34px; width:84px; height:83px; background:#fff; border:5px solid #e8d5dc; border-radius:45% 45% 38% 38%; }
+.head { position:absolute; z-index:3; bottom:64px; left:18px; width:114px; height:103px; background:#fff; border:5px solid #e8d5dc; border-radius:46% 46% 43% 43%; }
+.eye { position:absolute; top:42px; width:8px; height:11px; background:#59414b; border-radius:2px; }
+.eye-left{left:28px;}.eye-right{right:28px;}
+.cheek { position:absolute; top:57px; width:17px;height:8px;background:#f6bdcf;border-radius:50%;opacity:.8; }
+.cheek-left{left:9px;}.cheek-right{right:9px;}
+.nose { position:absolute; top:58px; left:50px; width:9px;height:7px;background:#e995b2;clip-path:polygon(50% 100%,0 0,100% 0); }
+.mouth { position:absolute; top:66px; left:53px; width:3px;height:7px;background:#80616d; }
+.foot { position:absolute; z-index:4; bottom:0; width:37px;height:17px;background:#fff;border:4px solid #e8d5dc;border-radius:50%; }
+.foot-left{left:31px;}.foot-right{right:29px;}
+
+.accessory { display:none; position:absolute; z-index:5; top:24px; left:50%; transform:translateX(-50%); font-size:30px; filter:drop-shadow(0 2px 0 #fff); }
+/* A flor fica presa na orelha esquerda do Bam. */
+.accessory.flower-on-ear { top:-8px; left:27px; transform:rotate(-12deg); font-size:25px; }
+.speech { position:absolute; z-index:6; left:50%; top:15px; transform:translateX(-50%); white-space:nowrap; padding:8px 13px; background:white; border:1px solid #f4dce7; border-radius:15px; color:#a65e80; font-size:12px; font-weight:800; box-shadow:0 4px 12px #b36b8812; }
+.speech:after { content:""; position:absolute; left:50%; bottom:-6px; width:10px;height:10px;background:white;border-right:1px solid #f4dce7;border-bottom:1px solid #f4dce7;transform:translateX(-50%) rotate(45deg); }
+.pet-name-row,.xp-row { display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-weight:700; }
+.pet-name-row { margin:16px 0 10px; }.text-button { border:0;background:none;color:var(--pink-dark);font-weight:900; }
+.xp-row { margin-bottom:7px; }.xp-track,.stat-track { background:#f7eaf0;border-radius:20px;overflow:hidden; }
+.xp-track { height:9px; }.xp-fill { height:100%;width:0;background:linear-gradient(90deg,#e98db1,#f4b6cc);border-radius:20px;transition:width .3s; }
+.care-panel { padding:22px; }
+.panel-heading { display:flex;justify-content:space-between;align-items:center;margin-bottom:22px; }
+.panel-heading h2,.section-heading h2 { margin:0;font-size:23px; }
+.status-dot { width:11px;height:11px;border-radius:50%;background:#8dc9a2;box-shadow:0 0 0 5px #8dc9a222; }
+.stat { margin:0 0 20px; }.stat-label { display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px;font-weight:800; }.stat-label strong { color:#9a7a8b; }
+.stat-track { height:11px; }.stat-fill { height:100%;border-radius:20px;transition:width .3s; }.hunger-fill{background:#f1b65e;width:80%;}.happy-fill{background:#e98db1;width:80%;}.energy-fill{background:#8db9dc;width:80%;}
+.actions { display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px; }
+.action-btn { border:1px solid var(--line);border-radius:15px;background:#fff9fc;padding:12px 8px;display:grid;justify-items:center;gap:3px;color:var(--ink);transition:transform .15s,background .15s; }
+.action-btn:hover,.buy-btn:hover { transform:translateY(-2px); }.action-btn:active{transform:scale(.97);}
+.action-btn span { font-size:22px; }.action-btn b{font-size:12px;}.action-btn small{font-size:10px;color:var(--muted);}
+.hint { color:var(--muted);font-size:11px;text-align:center;margin:17px 0 0; }
+.extras { margin-top:19px;padding:21px; }.section-heading { display:flex;align-items:end;justify-content:space-between;margin-bottom:17px; }.shop-note{font-size:11px;color:#a77a25;font-weight:800;}
+.shop-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:12px; }.shop-item { border:1px solid var(--line);background:#fffafd;border-radius:16px;text-align:center;padding:12px 8px; }
+.item-art { height:65px;display:grid;place-items:center;font-size:35px;background:#fff0f6;border-radius:12px;margin-bottom:9px; }.crown-art{background:#fff5d9;}.flower-art{background:#f3f6ff;}.heart-art{background:#fff0f3;}
+.shop-item h3{font-size:13px;margin:0 0 3px;}.shop-item p{font-size:10px;color:var(--muted);margin:0 0 10px;}
+.buy-btn { border:0;background:#f9dfeb;color:#a64f76;border-radius:20px;padding:7px 9px;font-size:10px;font-weight:900;transition:transform .15s; }.buy-btn.owned{background:#e7f4e9;color:#548b61;}
+footer{text-align:center;color:#b69aaa;font-size:11px;padding:24px 0 5px;}footer span{color:var(--pink);}
+.name-dialog { border:1px solid var(--line);border-radius:22px;padding:25px;width:min(390px,calc(100% - 30px));color:var(--ink);box-shadow:0 20px 80px #5b304433; }.name-dialog::backdrop{background:#49313f66;backdrop-filter:blur(3px);}
+.name-dialog form{text-align:center;}.dialog-icon{font-size:35px;}.name-dialog h2{font-size:21px;margin:8px 0;}.name-dialog p{font-size:12px;color:var(--muted);}
+.name-dialog input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;outline:none;margin:10px 0 15px;color:var(--ink);}.name-dialog input:focus{border-color:var(--pink);}
+.dialog-actions{display:flex;gap:8px;}.dialog-actions button{flex:1;border:0;border-radius:12px;padding:11px;font-weight:900;font-size:12px;}.cancel-btn{background:#f6edf1;color:var(--muted);}.confirm-btn{background:var(--pink);color:white;}
+.toast { position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#69495b;color:white;padding:11px 17px;border-radius:30px;font-size:12px;font-weight:800;box-shadow:0 8px 25px #4d2e3c33;transition:.25s;z-index:20; }.toast.show{opacity:1;transform:translate(-50%,0);}
+.pet-wrap.hopping .pet { animation:hop .55s ease; }.pet-wrap.sleeping .pet { animation:sleepingBreath 2.2s ease-in-out infinite; }.pet-wrap.happy .pet { animation:happy .5s ease 2; }
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes hop{0%,100%{transform:translateY(0)}45%{transform:translateY(-32px) rotate(-5deg)}}
+@keyframes happy{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) translateY(-8px)}75%{transform:rotate(8deg) translateY(-8px)}}
+@keyframes sleepy{0%,100%{transform:translateY(0)}50%{transform:translateY(4px) scaleY(.97)}}
+@media(max-width:760px){.game-layout{grid-template-columns:1fr}.scene{height:290px}.shop-grid{grid-template-columns:repeat(2,1fr)}.intro{padding-top:27px}.care-panel{padding:19px}.pet-app{width:min(100% - 22px,560px)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+
+/* Braços: agora Bam tem os dois bracinhos visíveis. */
+.arm {
+  position: absolute;
+  z-index: 3;
+  bottom: 48px;
+  width: 27px;
+  height: 43px;
+  background: #fff;
+  border: 4px solid #e8d5dc;
+  border-radius: 45% 45% 50% 50%;
+  transform-origin: 50% 12%;
+}
+.arm-left { left: 19px; transform: rotate(32deg); }
+.arm-right { right: 17px; transform: rotate(-32deg); }
+
+.carrot-snack {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  top: 94px;
+  font-size: 27px;
+  opacity: 0;
+  transform: translate(-50%, 18px) rotate(-35deg) scale(.55);
+  pointer-events: none;
+  filter: drop-shadow(0 2px 1px #b77b5a33);
+}
+.pet-wrap.eating .carrot-snack {
+  animation: carrotBite 1.8s ease-in-out forwards;
+}
+.pet-wrap.eating .arm-left { animation: pawEat .55s ease-in-out 3; }
+.pet-wrap.eating .arm-right { animation: pawEat .55s ease-in-out 3 .12s; }
+.pet-wrap.eating .pet { animation: munch .22s ease-in-out 7; }
+
+.toy-ball {
+  display: none;
+  position: absolute;
+  z-index: 7;
+  left: 17%;
+  bottom: 42px;
+  width: 43px;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 12px #76516a35;
+  font-size: 27px;
+  line-height: 43px;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: left .28s ease, bottom .28s ease, transform .2s ease;
+}
+.scene.playing .toy-ball { display: block; animation: ballWiggle .65s ease-in-out infinite alternate; }
+.scene.ball-pos-1 .toy-ball { left: 17%; }
+.scene.ball-pos-2 .toy-ball { left: 43%; }
+.scene.ball-pos-3 .toy-ball { left: 70%; }
+.scene.ball-caught .toy-ball { animation: ballCaught .35s ease; }
+.scene.playing .pet-wrap .pet { animation: chaseHop .75s ease-in-out infinite; }
+.scene.playing .speech { top: 13px; }
+
+.pet-wrap.blinking .eye { animation: blink .22s ease; }
+.pet-wrap.bouncing .pet { animation: bounce .65s ease-in-out 2; }
+.pet-wrap.love .pet { animation: loveDance .7s ease 2; }
+
+@keyframes carrotBite {
+  0% { opacity: 0; transform: translate(-50%, 18px) rotate(-35deg) scale(.5); }
+  18% { opacity: 1; transform: translate(-50%, -1px) rotate(-20deg) scale(1); }
+  45% { opacity: 1; transform: translate(-50%, -7px) rotate(-8deg) scale(.92); }
+  72% { opacity: .9; transform: translate(-50%, -2px) rotate(5deg) scale(.65); }
+  100% { opacity: 0; transform: translate(-50%, 8px) rotate(18deg) scale(.1); }
+}
+@keyframes pawEat {
+  0%,100% { transform: rotate(32deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-9px); }
+}
+@keyframes munch {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(1px) scale(1,.96); }
+}
+@keyframes ballWiggle { from { transform: translateY(0) rotate(-12deg); } to { transform: translateY(-8px) rotate(12deg); } }
+@keyframes ballCaught { 50% { transform: scale(1.45) rotate(30deg); opacity: .5; } }
+@keyframes chaseHop { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-18px) rotate(5deg); } }
+@keyframes blink { 50% { transform: scaleY(.12); } }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 40% { transform: translateY(-25px); } }
+@keyframes loveDance { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-9deg) translateY(-5px); } 75% { transform: rotate(9deg) translateY(-5px); } }
+
+
+/* Revisão dos braços: duas patinhas curtas, simétricas e ligadas ao tronco. */
+.arm {
+  z-index: 2;
+  bottom: 57px;
+  width: 29px;
+  height: 38px;
+  border: 4px solid #e8d5dc;
+  border-radius: 48% 48% 55% 55%;
+  background: #fff;
+  transform-origin: 50% 18%;
+  box-shadow: inset 0 -3px 0 #fff0f5;
+}
+.arm-left { left: 20px; transform: rotate(24deg); }
+.arm-right { right: 20px; transform: rotate(-24deg); }
+
+/* Cenário com transição gradual entre dia e noite. */
+.scene {
+  transition: background 1.8s ease, filter 1.8s ease;
+}
+.sun { transition: opacity 1.3s ease, transform 1.8s ease; }
+.moon {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 38px;
+  color: #fff2b8;
+  font-size: 49px;
+  opacity: 0;
+  transform: translateY(22px) rotate(-35deg) scale(.5);
+  text-shadow: 0 0 18px #fff0a8;
+  transition: opacity 1.4s ease, transform 1.8s cubic-bezier(.2,.8,.2,1);
+}
+.scene.night {
+  background: linear-gradient(#333b65 0 67%, #55516f 67%);
+}
+.scene.night .sun { opacity: 0; transform: translateY(28px) scale(.55); }
+.scene.night .moon { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+.scene.night .cloud { background: #aab2d2; opacity: .38; }
+.scene.night .sparkle { color: #fff0b3; animation: twinkle 1.8s ease-in-out infinite alternate; }
+.scene.night .ground { background: #56516d; border-color: #46415d; }
+.scene.night .speech { background: #f4f0ff; color: #64628f; }
+
+/* Sequência de deitar e levantar. */
+.pet-wrap.laying .pet { animation: lieDown 1.15s cubic-bezier(.2,.8,.2,1) forwards; }
+.pet-wrap.sleeping .pet { animation: sleepingBreath 2.2s ease-in-out infinite; }
+.pet-wrap.waking .pet { animation: wakeUp 1.25s cubic-bezier(.2,.8,.2,1) both; }
+.pet-wrap.sleeping .eye { transform: scaleY(.12); transform-origin: center; }
+.pet-wrap.sleeping .arm-left { transform: rotate(65deg) translateY(3px); }
+.pet-wrap.sleeping .arm-right { transform: rotate(-65deg) translateY(3px); }
+.scene.night .speech { animation: softGlow 2s ease-in-out infinite alternate; }
+
+@keyframes lieDown {
+  0% { transform: rotate(0) translateY(0) scale(1); }
+  35% { transform: rotate(-8deg) translateY(4px) scale(1.02,.98); }
+  100% { transform: rotate(88deg) translate(-10px,24px) scale(1.08,.82); }
+}
+@keyframes sleepingBreath {
+  0%,100% { transform: rotate(88deg) translate(-10px,24px) scale(1.08,.82); }
+  50% { transform: rotate(88deg) translate(-10px,26px) scale(1.1,.80); }
+}
+@keyframes wakeUp {
+  0% { transform: rotate(88deg) translate(-10px,24px) scale(1.08,.82); }
+  55% { transform: rotate(-7deg) translateY(-8px) scale(1.02); }
+  100% { transform: rotate(0) translateY(0) scale(1); }
+}
+@keyframes twinkle { from { opacity:.5; } to { opacity:1; } }
+@keyframes softGlow { from { box-shadow:0 4px 12px #b36b8812; } to { box-shadow:0 0 18px #fff0b8aa; } }
+
+/* Comer: Bam segura a cenoura, inclina a cabeça e mastiga em pequenas pausas. */
+.carrot-snack { top: 91px; font-size: 34px; }
+.pet-wrap.eating .carrot-snack { animation: carrotMeal 3.4s ease-in-out forwards; }
+.pet-wrap.eating .pet { animation: eatingBody 3.4s ease-in-out forwards; }
+.pet-wrap.eating .arm-left { animation: leftPawMeal .75s ease-in-out 3; }
+.pet-wrap.eating .arm-right { animation: rightPawMeal .75s ease-in-out 3; }
+.pet-wrap.eating .head { animation: headMunch .38s ease-in-out 6; }
+@keyframes carrotMeal {
+  0% { opacity:0; transform:translate(-50%,22px) rotate(-50deg) scale(.45); }
+  15% { opacity:1; transform:translate(-50%,-3px) rotate(-24deg) scale(1.05); }
+  28%,42%,56%,70% { opacity:1; transform:translate(-50%,-8px) rotate(-8deg) scale(.94); }
+  35%,49%,63% { opacity:1; transform:translate(-50%,-5px) rotate(3deg) scale(.88); }
+  85% { opacity:.9; transform:translate(-50%,0) rotate(14deg) scale(.55); }
+  100% { opacity:0; transform:translate(-50%,12px) rotate(28deg) scale(.1); }
+}
+@keyframes eatingBody { 0%,100% { transform:translateY(0); } 25%,55%,80% { transform:translateY(2px); } }
+@keyframes leftPawMeal { 0%,100% { transform:rotate(24deg); } 50% { transform:rotate(-14deg) translateY(-10px); } }
+@keyframes rightPawMeal { 0%,100% { transform:rotate(-24deg); } 50% { transform:rotate(14deg) translateY(-10px); } }
+@keyframes headMunch { 0%,100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(2px) rotate(2deg); } }
+
+/* Alvos dos minijogos. */
+.game-target {
+  position:absolute; z-index:9; display:grid; place-items:center;
+  width:48px; height:48px; border:0; border-radius:50%;
+  background:#fff; box-shadow:0 5px 15px #65455a35;
+  font-size:28px; cursor:pointer; touch-action:manipulation;
+  animation: targetPop .35s ease both, targetFloat 1s ease-in-out infinite alternate;
+}
+.game-target:active { transform:scale(.8); }
+.scene.game-carrot .game-target { background:#fff4e7; }
+.scene.game-stars .game-target { background:#fff9d9; }
+@keyframes targetPop { from { opacity:0; scale:.3; } to { opacity:1; scale:1; } }
+@keyframes targetFloat { from { translate:0 0; } to { translate:0 -8px; } }
+@media(max-width:760px) {
+  .actions { grid-template-columns:1fr 1fr; }
+  .action-btn small { line-height:1.25; }
+}
